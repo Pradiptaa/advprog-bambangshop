@@ -77,6 +77,9 @@ This is the place for you to write reflections:
 ### Mandatory (Publisher) Reflections
 
 #### Reflection Publisher-1
+1. Dalam pola desain Observer, seperti yang dijelaskan dalam buku Head First Design Pattern, interface Subscriber memungkinkan fleksibilitas karena objek yang berbeda dapat menjadi pelanggan selama mereka mengimplementasikan interface ini. Dalam kasus BambangShop, menggunakan interface masih diperlukan untuk menjaga desain yang fleksibel dan dapat diperluas, daripada hanya menggunakan satu model struct. 
+2. karena id di Program dan url di Subscriber harus unik, menggunakan DashMap lebih efektif dibandingkan hanya menggunakan Vec, karena mempermudah pencarian dan akses data yang unik tanpa perlu iterasi manual. 
+3. meskipun Rust menerapkan pembatasan kompiler yang ketat untuk memastikan keselamatan thread, penggunaan DashMap pada variabel static SUBSCRIBERS lebih tepat daripada mengimplementasikan pola Singleton karena DashMap sudah menyediakan fungsionalitas HashMap yang aman thread, yang cocok untuk kasus dengan akses konkuren tanpa memerlukan mekanisme locking manual yang kompleks.
 
 #### Reflection Publisher-2
 
